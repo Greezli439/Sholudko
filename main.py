@@ -1,7 +1,7 @@
 from pathlib import Path
 
 """
-This program collects and processes information from 
+This program collects and processes information from
 personnel log files and provides a list with ID,
 name, date and time of entry or exit to the facility.
 """
@@ -20,8 +20,8 @@ def read_files(path: str) -> tuple:
     """
     path = Path(path) / 'data'
     with open(path / CREW_FILENAME) as cf, \
-        open(path / ENTRANCE_FILENAME) as enf, \
-        open(path / EXIT_FILENAME) as exf:
+            open(path / ENTRANCE_FILENAME) as enf, \
+            open(path / EXIT_FILENAME) as exf:
         crew = cf.readlines()
         enter = enf.readlines()
         exit = exf.readlines()
@@ -31,7 +31,8 @@ def read_files(path: str) -> tuple:
 def main(path: str) -> dict:
     """
     :param path: Tuple with dict and list.
-    :return: list with ID, name, date and time of entry or exit to the facility.
+    :return: list with ID, name, date and time of entry or exit to the
+             facility.
     """
     crew, enter, exit = read_files(path)
     d_crew, res, d_res = {}, {}, {}
@@ -44,9 +45,11 @@ def main(path: str) -> dict:
             if k2 == k:
                 for j in exit:
                     k3, dt3 = j.split(' |')[0], j.split(' |')[1]
-                    if k3 == k2 and j.split(' |')[1].split()[0] == i.split(' |')[1].split()[0]:
-                        p_res.setdefault(dt.split()[0], []).append([i.split(' |')[1].split()[1],
-                                                                    j.split(' |')[1].split()[1]])
+                    if k3 == k2 and j.split(' |')[1].split()[0] \
+                                 == i.split(' |')[1].split()[0]:
+                        p_res.setdefault(dt.split()[0], [])\
+                            .append([i.split(' |')[1].split()[1],
+                            j.split(' |')[1].split()[1]])
                         exit.remove(j)
                         break
         res[k] = {'name': name.strip(), 'visits': p_res}
