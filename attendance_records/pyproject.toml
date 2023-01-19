@@ -1,0 +1,26 @@
+[build-system]
+requires = ['setuptools>=61.1']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'useful'
+version = '1.0.2'
+description = """
+    This program collects and processes information from
+    personnel log files and provides a list with ID,
+    name, date and time of entry or exit to the facility.
+"""
+author = [
+    {name='Sholudko Mykhailo', email='greez_example@gmail.com'}
+]
+readme = 'README.md'
+requires-python = '>=3.10'
+classifires = [
+    'Programming language :: python :: 3',
+    'license :: OSI Approved :: Apache License',
+    'Operating System :: OS Independent'
+]
+
+[project.urls]
+'Homepage' = 'https://github.com/Greezli439/Sholudko'
+'Bug Traker' = 'https://github.com/Greezli439/Sholudko/issues'
