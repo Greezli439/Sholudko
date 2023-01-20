@@ -110,11 +110,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder attendance_records settings
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope attendance_records settings
 .ropeproject
 
 # mkdocs documentation

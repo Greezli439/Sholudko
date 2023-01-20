@@ -41,16 +41,14 @@ def fill_table(path):
             date, time = datetime.split()
             if crew_id != id_p:
                 continue
-            enter_obj = EnterModel.create(person=person_obj, date=date,
-                                          time=time)
+            EnterModel.create(person=person_obj, date=date, time=time)
 
-        for line in enter:
+        for line in exit_f:
             id_p, datetime = line.split(' |')
             date, time = datetime.split()
             if crew_id != id_p:
                 continue
-            exit_obj = ExitModel.create(person=person_obj, date=date,
-                                        time=time)
+            ExitModel.create(person=person_obj, date=date, time=time)
 
 
 if __name__ == '__main__':

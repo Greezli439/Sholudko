@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from attendance_records.scr.project.main import main, make_dict
+from attendance_records.source.attendance_records.main import main, make_dict
 
 
 class TestMakeDict(unittest.TestCase):
@@ -49,7 +49,7 @@ class TestMain(unittest.TestCase):
             }
         }
 
-    @patch('attendance_records.scr.project.main.read_files')
+    @patch('attendance_records.source.attendance_records.main.read_files')
     def test_namal_behaivor(self, mock_read_files):
         mock_read_files.return_value = (self.id_crew, self.enter, self.exit_f)
         res = main('')
