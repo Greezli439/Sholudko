@@ -1,5 +1,11 @@
+"""
+Read data from file and write data in to DB
+"""
+
+
 from peewee import *
 from main import read_files
+
 
 PATH = '/home/mykhailo/Hillel/Final_Project/Sholudko/data'
 db = SqliteDatabase('people.db')
@@ -28,6 +34,11 @@ class ExitModel(BaceModel):
 
 
 def fill_table(path):
+    """
+    read data from file and write data in to DB
+    :param path: Path
+    :return: None
+    """
     crew, enter, exit_f = read_files(path)
     for line in crew:
         person = {
